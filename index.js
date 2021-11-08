@@ -39,7 +39,7 @@ inquirer.prompt(QUESTIONS).then(async answers => {
   fs.mkdirSync(`${CURR_DIR}/${projectName}`)
   createDirectoryContents(templatePath, projectName)
   exec(
-    `cd ${CURR_DIR}/${projectName} && npm install`,
+    `cd ${CURR_DIR}/${projectName} && git init && npm install`,
     (err, stdout, stderr) => {
       if (err) console.log(err)
       console.log(stdout)
